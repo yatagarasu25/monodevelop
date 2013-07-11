@@ -8,19 +8,11 @@ RUN_TEST=$(MDTOOL_RUN) run-md-tests
 TEST_DIR=$(top_builddir)/build/tests
 EXTERNAL=$(top_builddir)/external
 
-TEST_PROJECTS_MAC = \
-	MacPlatform.Tests/MacPlatform.Tests.csproj
-
-TEST_PROJECTS_COMMON = \
-	UnitTests/UnitTests.csproj \
-	$(top_srcdir)/src/addins/MonoDevelop.Debugger/MonoDevelop.Debugger.Tests/MonoDevelop.Debugger.Tests.csproj \
-	$(EXTERNAL)/ngit/NGit.Test/NGit.Test.csproj
-
 TEST_ASSEMBLIES_MAC = \
-	$(TEST_DIR)/MonoDevelop.VersionControl.Subversion.Tests.dll \
 	$(TEST_DIR)/MacPlatform.Tests.dll
 
 TEST_ASSEMBLIES_COMMON = \
+	$(TEST_DIR)/MonoDevelop.VersionControl.Subversion.Tests.dll \
 	$(TEST_DIR)/MonoDevelop.VersionControl.Git.Tests.dll \
 	$(TEST_DIR)/UnitTests.dll \
 	$(TEST_DIR)/MonoDevelop.Debugger.Tests.dll \
@@ -30,11 +22,9 @@ TEST_ASSEMBLIES_COMMON = \
 	$(EXTERNAL)/ngit/bin/NGit.Test.dll
 
 
-ALL_CSPROJ = $(TEST_PROJECTS_COMMON)
 TEST_ASSEMBLIES = $(TEST_ASSEMBLIES_COMMON)
 
 if ENABLE_MACPLATFORM
-ALL_CSPROJ += $(TEST_PROJECTS_MAC)
 TEST_ASSEMBLIES += $(TEST_ASSEMBLIES_MAC)
 endif
 
