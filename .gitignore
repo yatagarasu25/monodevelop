@@ -221,3 +221,4 @@ main/external/Makefile
 
 #dotCover
 *.dotCover
+main/Backup/

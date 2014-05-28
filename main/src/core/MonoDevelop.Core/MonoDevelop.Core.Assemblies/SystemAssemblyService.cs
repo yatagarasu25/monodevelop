@@ -327,7 +327,6 @@ namespace MonoDevelop.Core.Assemblies
 		{
 			const IKVM.Reflection.UniverseOptions ikvmOptions =
 				IKVM.Reflection.UniverseOptions.DisablePseudoCustomAttributeRetrieval |
-				IKVM.Reflection.UniverseOptions.SupressReferenceTypeIdentityConversion |
 				IKVM.Reflection.UniverseOptions.ResolveMissingMembers;
 
 			var universe = new IKVM.Reflection.Universe (ikvmOptions);
